@@ -1,6 +1,11 @@
 h1{
     text-align: center;
   }
+  #inputText, #outputText{
+      margin: 0;
+      padding:3px 5px;
+  }
+  
   .container{
     margin: auto;
     width: 25%;
@@ -17,8 +22,9 @@ h1{
     font-weight: bold;
     text-align: right;
     width: 93%;
+    height: 27%;
     border: none;
-    background-color: #e5ecf3;
+    background-color: #e7f2fc;
   }
 
   .row
@@ -43,7 +49,24 @@ h1{
    margin: 0 2px;
    /*border: 1px solid #000;*/
   }
-  .big{
+  .row.row5{
+    width: 100%;
+    right: 9px;
+    position: relative;
+}
+  
+  #btnAC{
+        float: right;
+    }
+
+#btnEquals{
+    background-color: rgb(91, 127, 190);
+    float:right;
+}
+#btnAC{
+    background-color: #cb4141;
+}
+  /* .big{
     padding: 15px;
     margin:4px 4px;
     font-weight: bold;
@@ -66,4 +89,4 @@ h1{
     float: left;
     width: 31.5%;
     margin: 0 2px;
-   }
+   } */

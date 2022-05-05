@@ -7,47 +7,52 @@
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <h1>Carpetulator</h1>
     <div class="container">
       <!-- <div class="header">Calculator</div> -->
         <div class="IO">
             <div>
-                <input type="number" class="IO input">
+                <!-- <input type="number" class="IO IO-input"> -->
+                <p id="inputText">0</p>
             </div>
             <hr>
             <div>
-                <output name = result class="IO output">25</output>
+                <!-- <output name = result class="IO IO-output">25</output> -->
+                <p id="outputText">0</p>
             </div>
         </div>
     <div class="controls">
-      <div class="row row-1">
-        <input type="button" value="7" id="btn7" class="calc-button">
-        <input type="button" value="8" id="btn8" class="calc-button">
-        <input type="button" value="9" id="btn9" class="calc-button">
-        <input type="button" value="%" id="btnPercent" class="calc-button">
+        <div class="row row5">
+            <input type="button" value="AC" id="btnAC" class="calc-button calc-button-operator">
+            <input type="button" value="=" id="btnEquals" class="calc-button calc-button-operator">
+            <!-- <input type="button" value="=" id="btnEquals" class=" big">
+              <input type="button" value="AC" id="btnAC" class=" small"> -->
+          </div>
+        <div class="row row-1">
+        <input type="button" value="7" id="btn7" class="calc-button calc-button-num">
+        <input type="button" value="8" id="btn8" class="calc-button calc-button-num">
+        <input type="button" value="9" id="btn9" class="calc-button calc-button-num">
+        <input type="button" value="%" id="btnPercent" class="calc-button calc-button-operator">
       </div>
       <div class="row row-2">
-        <input type="button" value="4" id="btn4" class="calc-button">
-        <input type="button"  value="5" id="btn5" class="calc-button">
-        <input type="button" value="6" id="btn6" class="calc-button">
-        <input type="button" value="-" id="btnMinus" class="calc-button">
+        <input type="button" value="4" id="btn4" class="calc-button calc-button-num">
+        <input type="button"  value="5" id="btn5" class="calc-button calc-button-num">
+        <input type="button" value="6" id="btn6" class="calc-button calc-button-num">
+        <input type="button" value="-" id="btnMinus" class="calc-button calc-button-operator">
       </div>
       <div class="row row3">
-        <input type="button"  value="1" id="btn1" class="calc-button">
-        <input type="button"  value="2" id="btn2" class="calc-button">
-        <input type="button" value="3" id="btn3" class="calc-button">
-        <input type="button" value="+" id="btnPlus" class="calc-button">
+        <input type="button"  value="1" id="btn1" class="calc-button calc-button-num">
+        <input type="button"  value="2" id="btn2" class="calc-button calc-button-num">
+        <input type="button" value="3" id="btn3" class="calc-button calc-button-num">
+        <input type="button" value="+" id="btnPlus" class="calc-button calc-button-operator">
       </div>
       <div class="row row4">
-        <input type="button" value="0" id="btn0" class="calc-button">
-        <input type="button" value=".DEC" id="btnDec" class="calc-button">
-        <input type="button" value="/"  id="btnDvd" class="calc-button">
-        <input type="button" value="x" id="btnMult" class="calc-button">
+        <input type="button" value="0" id="btn0" class="calc-button calc-button-num">
+        <input type="button" value=".DEC" id="btnDec" class="calc-button calc-button-operator">
+        <input type="button" value="/"  id="btnDvd" class="calc-button calc-button-operator">
+        <input type="button" value="x" id="btnMult" class="calc-button calc-button-operator">
       </div>
-      <div class="row row5">
-          <input type="button" value="=" id="btnEquals" class=" big">
-          <input type="button" value="AC" id="btnAC" class=" small">
-      </div>
+      
     </div>
     </div>
 </body>
