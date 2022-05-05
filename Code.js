@@ -46,20 +46,19 @@ window.addEventListener('load', (event) => { //For now we'll ignore this line an
         strngOp='';
         rangeBegin=0;
         rangeEnd=0;
-        let i=0;
-        while( i < strng.length){
+        for(let i =0;i< strng.length; i++){
             if(strng[i]==' '){
                 rangeEnd = i;
                 strngNum = parseFloat(strng.slice(rangeBegin,rangeEnd));
                 Operands.push(strngNum);
                 Operators.push(strng[i+1]);
                 rangeBegin = i+3;
-                i=i+3;
+                i=i+2;
                 
-            }else if(i>=strng.length-1){
+            }else if(i==strng.length-1){
                 strngNum = parseFloat(strng.slice(rangeBegin,strng.length));
                 Operands.push(strngNum);
-            }else i++;
+            }
 
         }
         console.log(Operands);
