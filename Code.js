@@ -63,7 +63,40 @@ window.addEventListener('load', (event) => { //For now we'll ignore this line an
         }
         console.log(Operands);
         console.log(Operators);
-        return 69;
+        return Eval(Operands, Operators);
+        // return 69;
+    }
+
+    function Eval(operands, operators){
+        var tempOperands=new Array();
+        tempOperands=operands;
+        var tempOps = new Array();
+        var remainingOperans=new Array();
+        var tempresult=0;
+        var result=0;
+        for(let i=0;i<operators.length;i++){
+            if(operators[i]=='+'){
+                tempresult=parseFloat(tempOps[i])+parseFloat(tempOps[i+1])
+                // remainingOperans = tempOperands.slice(i+2)
+                tempOperands[i]=tempresult;
+               tempOps.push(tempresult)
+            
+                for(let j=i;j<tempOperands.length;j++){
+                    if(j+2<tempOperands.length){
+                    tempOperands[j+1]=tempOperands[j+2];
+                    tempOps.push(tempOperands[j+2])
+                    }   
+                }
+                console.log(tempOps);
+                
+                // tempOperands.push(tempresult);
+            }
+            // console.log(tempOperands);
+            // console.log(tempresult);
+        }
+        console.log(tempresult);
+        return result;
+
     }
     
     function Minus(event){
