@@ -10,37 +10,45 @@
     <h1>Calculator</h1>
     <div class="container">
       <!-- <div class="header">Calculator</div> -->
-      <input type="number" class="result">
-      <hr>
-      <output name = result class="result-output">25</output>
+        <div class="IO">
+            <div>
+                <input type="number" class="IO input">
+            </div>
+            <hr>
+            <div>
+                <output name = result class="IO output">25</output>
+            </div>
+        </div>
+    <div class="controls">
       <div class="row row-1">
-        <input type="button" value="7" class="calc-button">
-        <input type="button" value="8" class="calc-button">
-        <input type="button" value="9" class="calc-button">
-        <input type="button" value="%" class="calc-button">
+        <input type="button" value="7" id="btn7" class="calc-button">
+        <input type="button" value="8" id="btn8" class="calc-button">
+        <input type="button" value="9" id="btn9" class="calc-button">
+        <input type="button" value="%" id="btnPercent" class="calc-button">
       </div>
       <div class="row row-2">
-        <input type="button" value="4" class="calc-button">
-        <input type="button"  value="5" class="calc-button">
-        <input type="button" value="6" class="calc-button">
-        <input type="button" value="-" class="calc-button">
+        <input type="button" value="4" id="btn4" class="calc-button">
+        <input type="button"  value="5" id="btn5" class="calc-button">
+        <input type="button" value="6" id="btn6" class="calc-button">
+        <input type="button" value="-" id="btnMinus" class="calc-button">
       </div>
       <div class="row row3">
-        <input type="button"  value="1" class="calc-button">
-        <input type="button"  value="2" class="calc-button">
-        <input type="button" value="3" class="calc-button">
-        <input type="button" value="+" class="calc-button">
+        <input type="button"  value="1" id="btn1" class="calc-button">
+        <input type="button"  value="2" id="btn2" class="calc-button">
+        <input type="button" value="3" id="btn3" class="calc-button">
+        <input type="button" value="+" id="btnPlus" class="calc-button">
       </div>
       <div class="row row4">
-        <input type="button" value="0" class="calc-button">
-        <input type="button" value=".DEC" class="calc-button">
-        <input type="button" value="/" class="calc-button">
-        <input type="button" value="x" class="calc-button">
+        <input type="button" value="0" id="btn0" class="calc-button">
+        <input type="button" value=".DEC" id="btnDec" class="calc-button">
+        <input type="button" value="/"  id="btnDvd" class="calc-button">
+        <input type="button" value="x" id="btnMult" class="calc-button">
       </div>
       <div class="row row5">
-          <input type="button" value="=" class=" big">
-          <input type="button" value="AC" class=" small">
+          <input type="button" value="=" id="btnEquals" class=" big">
+          <input type="button" value="AC" id="btnAC" class=" small">
       </div>
+    </div>
     </div>
 </body>
 </html>

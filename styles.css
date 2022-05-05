@@ -1,51 +1,35 @@
 h1{
     text-align: center;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
   }
-  /* *{
-    margin: 0;
-    padding: 0;
-  } */
   .container{
     margin: auto;
     width: 25%;
     padding: 10px;
     border: 1px solid #f2f2f2;
-    -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
-       -moz-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
-            box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
-    background-color: #fff;
-    height: 500px;
-    background-color: #F8F8F8;
+    background-color: rgb(121, 116, 116);
+    height: 440px;
+    background-color: #713838;
   }
-  .header{
-    background-color: #81C784;
-    padding: 10px;
-    color: #fff;
-    text-align: center;
-  }
-  .result{
-    font-size: 40px;
-    padding: 24px 5px;
-    font-weight: 700;
+  .IO{
+    font-size: 30px;
+    padding: 15px 9px 0px 5px;
+    margin: 10px 7px;
+    font-weight: bold;
     text-align: right;
-    width: 90%;
+    width: 93%;
     border: none;
-    background-color: #F8F8F8;
+    background-color: #e5ecf3;
   }
-  .result-output{
-      font-size: 25px;
-      font-weight: 700;
-      float:right;
-      margin:10px 15px 10px 0;
-      
-  }
-  .row,
-  .conflict
+
+  .row
   {
     display: inline-block;
     width: 100%;
+  }
+  .controls{
+    text-align: center;
+    width: 100%;
+    padding: 0px 3px 0px 4px;
   }
   .calc-button{
    padding: 15px;
@@ -61,6 +45,7 @@ h1{
   }
   .big{
     padding: 15px;
+    margin:4px 4px;
     font-weight: bold;
     font-size: 16px;
     border: none;
@@ -72,6 +57,7 @@ h1{
   }
   .small{
     padding: 15px;
+    margin:4px 4px;
     font-weight: bold;
     font-size: 16px;
     border: none;
@@ -80,23 +66,4 @@ h1{
     float: left;
     width: 31.5%;
     margin: 0 2px;
-  }
-  .plus{
-    height: 105px;
-    width: 100%;
-  }
-  .green{
-    background-color: #81C784;
-  }
-  .red{
-    background-color: #F50258
-  }
-  .grey{
-    background-color: #F2F2F2;
-  }
-  .white-text{
-    color: #fff;
-  }
-  .top-margin{
-    margin-top: 4px;
-  }
+   }
