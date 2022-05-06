@@ -17,6 +17,36 @@
 
 window.addEventListener('load', (event) => { //For now we'll ignore this line and think of it as a main function
 
+    document.onkeyup=getKey;
+    var keyValue='';
+    function getKey(e){
+        keyValue = e.keyCode
+        console.log(String.fromCharCode(keyValue)+'--'+keyValue);
+        if(keyValue==107)  Plus(e);
+        else if(keyValue==109) Minus(e);
+        else if(keyValue==111) Divide(e);
+        else if(keyValue==88) Mult(e);
+        else if(keyValue==106) Mult(e);
+        else if(keyValue==53) Percent(e);
+        else if(keyValue==190) Decimal(e);
+        else if(keyValue==110) Decimal(e);
+        else if(keyValue==96){InputTxt = InputTxt+'0';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==97){InputTxt = InputTxt+'1';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==98){InputTxt = InputTxt+'2';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==99){InputTxt = InputTxt+'3';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==100){InputTxt = InputTxt+'4';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==101){InputTxt = InputTxt+'5';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==102){InputTxt = InputTxt+'6';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==103){InputTxt = InputTxt+'7';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==104){InputTxt = InputTxt+'8';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==105){InputTxt = InputTxt+'9';InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==13)Equals(e);
+        else if(keyValue==8){InputTxt = InputTxt.slice(0,InputTxt.length-1);InputWindow.innerHTML=InputTxt;}
+        
+        
+    }
+
+
     function NumOnClick(event){
         var num = event.target.value;
         
@@ -70,35 +100,78 @@ window.addEventListener('load', (event) => { //For now we'll ignore this line an
     function Eval(operands, operators){
         var tempOperands=new Array();
         tempOperands=operands;
-        console.log(tempOperands);
-        var tempOps = new Array();
-        tempOps[0]=operands[0];
         var remainingOperans=new Array();
         var tempresult=0;
         var result=0;
+
         var MultIndex = operators.indexOf('x');
         var DivIndex = operators.indexOf('/');
-        
+        var tempArray = new Array();
+        tempArray = operands;
+        var tempOps = new Array();
+        var tempOps2 = new Array();
+        // tempOps = operators;
+        var specialOps = new Array();
+        // if((operators.includes('/') ||operators.includes('/'))==false ){
+        let k,j=0;
+
         for(let i=0;i<operators.length;i++){
-            if((operators.includes('/') ||operators.includes('/'))==false ){
+            if(operators[i]=='/'||operators[i]=='x'||operators[i]=='%'){ 
+                specialOps.push(operators[i]);}
+            }
+    
+        var ind=0;
+        var tempresult2=0;
+        // console.log(specialOps.length);
+        for(let i=0;i<specialOps.length;i++){
+            if(specialOps[i]=='x'){ 
+                ind = operators.indexOf('x'); 
+                tempresult2 = parseFloat(tempOperands[ind])*parseFloat(tempOperands[ind+1]);
+            }else if(specialOps[i]=='/'){
+                ind = operators.indexOf('/'); 
+                tempresult2 = parseFloat(tempOperands[ind])/parseFloat(tempOperands[ind+1]);
+            }else if(specialOps[i]=='%'){
+                ind = operators.indexOf('%');
+                tempresult2 = parseFloat(tempOperands[ind])/100;
+            }
+            tempOperands[ind]=tempresult2;
+
+            for(let i=ind+1;i<tempOperands.length;i++){
+                if(i==tempOperands.length-1){ tempOperands=tempOperands.slice(0,tempOperands.length-1)}
+                else{tempOperands[i]=tempOperands[i+1];}
+            }
+
+            tempOps = operators.slice(0,ind);
+            console.log(operators);
+            tempOps2 = operators.slice(ind+1,operators.length);
+
+            operators = tempOps.concat(tempOps2);
+            console.log('aaaaaaa');
+        }
+
+
+        console.log(tempOperands);
+        console.log(operators);
+        if(tempOperands.length==1){result=tempOperands[0];return result;}
+
+        for(let i=0;i<operators.length;i++){
                 if(operators[i]=='+'){
                     tempresult=parseFloat(tempOperands[i])+parseFloat(tempOperands[i+1])
                     tempOperands[i+1]=tempresult;
                 }
-                if(operators[i]=='-'){
+                else if(operators[i]=='-'){
                     tempresult=parseFloat(tempOperands[i])-parseFloat(tempOperands[i+1])
                     tempOperands[i+1]=tempresult;
                 }
-            else{
-                if(operators[i]=='x'){
-                    tempresult=parseFloat(tempOperands[i])+parseFloat(tempOperands[i+1])
-                    tempOperands[i+1]=tempresult;
-                }
+            // else{
+            //     if(operators[i]=='x'){
+            //         tempresult=parseFloat(tempOperands[i])+parseFloat(tempOperands[i+1])
+            //         tempOperands[i+1]=tempresult;
+            //     }
 
-            }
+            // }
         }   
-        }
-        console.log(tempresult);
+        // console.log(tempresult);
         result = tempresult;
         return result;
 
@@ -107,42 +180,42 @@ window.addEventListener('load', (event) => { //For now we'll ignore this line an
     function Minus(event){
         var sign = event.target.value;
         
-        InputTxt = InputTxt+' '+sign+' '
+        InputTxt = InputTxt+' - '
         InputWindow.innerHTML=InputTxt;
     };
 
     function Plus(event){
         var sign = event.target.value;
         
-        InputTxt = InputTxt+' '+sign+' '
+        InputTxt = InputTxt+' + '
         InputWindow.innerHTML=InputTxt;
     };
 
     function Divide(event){
         var sign = event.target.value;
         
-        InputTxt = InputTxt+' '+sign+' '
+        InputTxt = InputTxt+' / '
         InputWindow.innerHTML=InputTxt;
     };
 
     function Mult(event){
         var sign = event.target.value;
         
-        InputTxt = InputTxt+' '+sign+' '
+        InputTxt = InputTxt+' x '
         InputWindow.innerHTML=InputTxt;
     };
     
     function Percent(event){
         var sign = event.target.value;
         
-        InputTxt = InputTxt+' '+sign+' '
+        InputTxt = InputTxt+' % '
         InputWindow.innerHTML=InputTxt;
     };
 
     function Decimal(event){
         var sign = event.target.value;
         
-        InputTxt = InputTxt+''+sign
+        InputTxt = InputTxt+'.'
         InputWindow.innerHTML=InputTxt;
     };
     
