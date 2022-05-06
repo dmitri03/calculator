@@ -70,31 +70,36 @@ window.addEventListener('load', (event) => { //For now we'll ignore this line an
     function Eval(operands, operators){
         var tempOperands=new Array();
         tempOperands=operands;
+        console.log(tempOperands);
         var tempOps = new Array();
+        tempOps[0]=operands[0];
         var remainingOperans=new Array();
         var tempresult=0;
         var result=0;
+        var MultIndex = operators.indexOf('x');
+        var DivIndex = operators.indexOf('/');
+        
         for(let i=0;i<operators.length;i++){
-            if(operators[i]=='+'){
-                tempresult=parseFloat(tempOps[i])+parseFloat(tempOps[i+1])
-                // remainingOperans = tempOperands.slice(i+2)
-                tempOperands[i]=tempresult;
-               tempOps.push(tempresult)
-            
-                for(let j=i;j<tempOperands.length;j++){
-                    if(j+2<tempOperands.length){
-                    tempOperands[j+1]=tempOperands[j+2];
-                    tempOps.push(tempOperands[j+2])
-                    }   
+            if((operators.includes('/') ||operators.includes('/'))==false ){
+                if(operators[i]=='+'){
+                    tempresult=parseFloat(tempOperands[i])+parseFloat(tempOperands[i+1])
+                    tempOperands[i+1]=tempresult;
                 }
-                console.log(tempOps);
-                
-                // tempOperands.push(tempresult);
+                if(operators[i]=='-'){
+                    tempresult=parseFloat(tempOperands[i])-parseFloat(tempOperands[i+1])
+                    tempOperands[i+1]=tempresult;
+                }
+            else{
+                if(operators[i]=='x'){
+                    tempresult=parseFloat(tempOperands[i])+parseFloat(tempOperands[i+1])
+                    tempOperands[i+1]=tempresult;
+                }
+
             }
-            // console.log(tempOperands);
-            // console.log(tempresult);
+        }   
         }
         console.log(tempresult);
+        result = tempresult;
         return result;
 
     }

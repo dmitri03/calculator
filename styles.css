@@ -2,10 +2,15 @@ h1{
     text-align: center;
   }
   #inputText, #outputText{
-      margin: 0;
+      margin: 7px;
       padding:3px 5px;
   }
-  
+  hr{
+    margin:none;
+    padding: none;
+    height:1px;
+  }
+
   .container{
     margin: auto;
     width: 25%;
@@ -22,7 +27,7 @@ h1{
     font-weight: bold;
     text-align: right;
     width: 93%;
-    height: 27%;
+    height: 30%;
     border: none;
     background-color: #e7f2fc;
   }
@@ -51,7 +56,7 @@ h1{
   }
   .row.row5{
     width: 100%;
-    right: 9px;
+    right: 1px;
     position: relative;
 }
   
