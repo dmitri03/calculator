@@ -17,6 +17,7 @@ h1{
     padding: 10px;
     border: 1px solid #f2f2f2;
     background-color: rgb(121, 116, 116);
+    border-radius: 7px;
     height: 440px;
     background-color: #713838;
   }
@@ -30,6 +31,7 @@ h1{
     height: 30%;
     border: none;
     background-color: #e7f2fc;
+    border-radius: 5px;
   }
 
   .row
