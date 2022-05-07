@@ -41,7 +41,9 @@ window.addEventListener('load', (event) => { //For now we'll ignore this line an
         else if(keyValue==104){InputTxt = InputTxt+'8';InputWindow.innerHTML=InputTxt;}
         else if(keyValue==105){InputTxt = InputTxt+'9';InputWindow.innerHTML=InputTxt;}
         else if(keyValue==13)Equals(e);
-        else if(keyValue==8){InputTxt = InputTxt.slice(0,InputTxt.length-1);InputWindow.innerHTML=InputTxt;}
+        else if(keyValue==8){InputTxt = InputTxt.slice(0,InputTxt.length-1);InputWindow.innerHTML=InputTxt; 
+            // if(InputTxt.length<1){InputTxt='0'; InputWindow.innerHTML=InputTxt;}
+        }
         
         
     }
